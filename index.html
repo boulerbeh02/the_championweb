@@ -1,180 +1,569 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>نتائج المباريات — دورة المرحوم زحزاح أحمد</title>
-<link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>نتائج المباريات — دورة المرحوم زحزاح أحمد</title>
+
+  <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="container header-top">
-    <div class="brand">
-      <span class="dot"></span> دورة المرحوم زحزاح أحمد <span class="sub">لكرة القدم</span>
-    </div>
-    <nav class="main-nav">
-      <a href="index.html" class="active">النتائج</a>
-      <a href="today.html">مباريات اليوم</a>
-      <a href="groups.html">المجموعات</a>
-      <a href="stats.html">الإحصائيات</a>
-    </nav>
-  </div>
-  <div class="ticker-wrap">
-    <div class="ticker-track">
-      <span>الجولة 1</span> ليستر 1 - 2 الأوهام
-      <span>الجولة 1</span> شباب بن يعقوب 3 - 0 القصارة
-      <span>الجولة 1</span> امل عين الشهداء 0 - 1 عبد اللاوي حسان
-      <span>قريباً</span> اتلاتيك زنينة 4 - 0 باريس الحاجب  
-      <span>قريباً</span> أولمبيك عين الشهداء × نجوم عين الشهداء
-      <span>قريباً</span> ترجي عين الشهداء 1 - 2 الأطرشي مصطفى 
-      <span>الجولة 1</span> ليستر 1 - 2 الأوهام
-      <span>الجولة 1</span> شباب بن يعقوب 3 - 0 القصارة
-      <span>الجولة 1</span> امل عين الشهداء 0 - 1 عبد اللاوي حسان
-      <span>قريباً</span> اتلاتيك زنينة 4 - 0 باريس الحاجب  
-      <span>قريباً</span> أولمبيك عين الشهداء × نجوم عين الشهداء
-      <span>قريباً</span> ترجي عين الشهداء 1 - 2 الأطرشي مصطفى 
-    </div>
-  </div>
-</header>
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
 
-<main class="container">
+    <div class="container header-top">
 
-  <section class="hero">
-    <div class="eyebrow">الجولة الأولى — انطلقت المنافسة</div>
-    <h1>نتائج المباريات</h1>
-    <p>لعبت ثلاث مباريات من الجولة الأولى إلى حد الآن ضمن المجموعة الأولى و الثانية. وبقية مباريات الجولة الأولى في المجموعتين الثانية والثالثة لم تُلعب بعد.</p>
-  </section>
-
-  <section class="section">
-    <div class="section-head">
-      <h2>الجولة الأولى </h2>
-      <span class="meta">مباريات منتهية</span>
-    </div>
-
-    <div class="grid">
-
-      <div class="card match-card">
-        <div class="match-meta">
-          <span class="badge done">انتهت</span>
-          <span>المجموعة الأولى</span>
-        </div>
-        <div class="match-teams">
-          <div class="team"><div class="crest">ليس</div> فريق ليستر</div>
-          <div class="score"> 1 <span class="vs">-</span> 2 </div>
-          <div class="team right"><div class="crest">أوه</div> فريق الأوهام</div>
-        </div>
-        <div class="match-foot">
-          <span>⚽ عبد الباسط ماضي</span>
-          <span>⚽  2× حميد ثامري </span>
-        </div>
+      <div class="brand">
+        <span class="dot"></span>
+        دورة المرحوم زحزاح أحمد
+        <span class="sub">لكرة القدم</span>
       </div>
 
-      <div class="card match-card">
-        <div class="match-meta">
-          <span class="badge done">انتهت</span>
-          <span>المجموعة الأولى</span>
-        </div>
-        <div class="match-teams">
-          <div class="team"><div class="crest">ش.ي</div> شباب بن يعقوب</div>
-          <div class="score">3 <span class="vs">-</span> 0</div>
-          <div class="team right"><div class="crest">قصا</div> فريق القصارة</div>
-        </div>
-        <div class="match-foot">
-          <span>⚽ 2× شريكي زهير 
-            <br> ⚽ عوسمي عز الدين
-          </span>
-        </div>
+      <nav class="main-nav">
+        <a href="index.html" class="active">النتائج</a>
+        <a href="today.html">مباريات اليوم</a>
+        <a href="groups.html">المجموعات</a>
+        <a href="stats.html">الإحصائيات</a>
+      </nav>
+
+    </div>
+
+
+    <!-- ==================== TICKER ==================== -->
+    <div class="ticker-wrap">
+
+      <div class="ticker-track">
+
+        <span>الجولة 1</span>
+        ليستر 1 - 2 الأوهام
+
+        <span>الجولة 1</span>
+        شباب بن يعقوب 3 - 0 القصارة
+
+        <span>الجولة 1</span>
+        أمل عين الشهداء 0 - 1 عبد اللاوي حسان
+
+        <span>الجولة 1</span>
+        اتلاتيك زنينة 4 - 0 باريس الحاجب
+
+        <span>الجولة 1</span>
+        الأطرشي مصطفى 2 - 1 نجوم عين الشهداء
+
+        <span>قريباً</span>
+        أولمبيك عين الشهداء × ترجي عين الشهداء
+
+
+        <!-- التكرار حتى يستمر الشريط -->
+        <span>الجولة 1</span>
+        ليستر 1 - 2 الأوهام
+
+        <span>الجولة 1</span>
+        شباب بن يعقوب 3 - 0 القصارة
+
+        <span>الجولة 1</span>
+        أمل عين الشهداء 0 - 1 عبد اللاوي حسان
+
+        <span>الجولة 1</span>
+        اتلاتيك زنينة 4 - 0 باريس الحاجب
+
+        <span>الجولة 1</span>
+        الأطرشي مصطفى 2 - 1 نجوم عين الشهداء
+
+        <span>قريباً</span>
+        أولمبيك عين الشهداء × ترجي عين الشهداء
+
       </div>
-        
+
+    </div>
+
+  </header>
+
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="container">
+
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+
+      <div class="eyebrow">
+        الجولة الأولى — انطلقت المنافسة
+      </div>
+
+      <h1>
+        نتائج المباريات
+      </h1>
+
+      <p>
+        نتائج مباريات دورة المرحوم زحزاح أحمد لكرة القدم،
+        مع متابعة نتائج المجموعات والمباريات القادمة.
+      </p>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         الجولة الأولى — المباريات المنتهية
+    ================================================== -->
+    <section class="section">
+
+      <div class="section-head">
+
+        <h2>
+          الجولة الأولى
+        </h2>
+
+        <span class="meta">
+          المباريات المنتهية
+        </span>
+
+      </div>
+
+
       <div class="grid">
 
-      <div class="card match-card">
-        <div class="match-meta">
-          <span class="badge done">انتهت</span>
-          <span>المجموعة الثانية</span>
-        </div>
-        <div class="match-teams">
-          <div class="team"><div class="crest">أمل</div> فريق أمل عين الشهداء</div>
-          <div class="score"> 0 <span class="vs">-</span> 1 </div>
-          <div class="team right"><div class="crest">حسان</div> فريق عبد اللاوي حسان</div>
-        </div>
-        <div class="match-foot">
-          <span></span>
-          <span> ⚽ مويسة احمد </span>
-        </div>
-      </div>
 
-
-      <div class="card match-card">
-        <div class="match-meta">
-          <span class="badge done">انتهت</span>
-          <span>المجموعة الثانية</span>
-        </div>
-        <div class="match-teams">
-          <div class="team"><div class="crest">أمل</div> اتلاتيك زنينة</div>
-          <div class="score"> 4 <span class="vs">-</span> 0 </div>
-          <div class="team right"><div class="crest">حسان</div> باريس الحاجب</div>
-        </div>
-        <div class="match-foot">
-          <span> ⚽ بن بوزيد بن عياش
-            <br>
-           ⚽ 3× صلاح خضاري
-          </span>
-        </div>
-      </div>
-        <div class="grid">
-        
+        <!-- ==================== مباراة 1 ==================== -->
         <div class="card match-card">
-        <div class="match-meta">
-          <span class="badge done">انتهت</span>
-          <span>المجموعة الثالثة</span>
-        </div>
-        <div class="match-teams">
-          <div class="team"><div class="crest">أ.م</div> الأطرشي مصطفى</div>
-          <div class="score"> 2 <span class="vs">-</span> 1 </div>
-          <div class="team right"><div class="crest">ن.ع</div> نجوم عين الشهداء</div>
-        </div>
-        <div class="match-foot">
-          <span> ⚽ عمار بوشمال <br>
-          </span>
-          <span> اسماعيل بوذانة</span>
-        </div>
-      </div>
-        </div>
-          
-  </section>
 
-  <section class="section">
-    <div class="section-head">
-      <h2>مباريات لم تُلعب بعد</h2>
-      <span class="meta">الجولة الأولى — المجموعة الثالثة</span>
+          <div class="match-meta">
+
+            <span class="badge done">
+              انتهت
+            </span>
+
+            <span>
+              المجموعة الأولى
+            </span>
+
+          </div>
+
+
+          <div class="match-teams">
+
+            <div class="team">
+              <div class="crest">
+                ليس
+              </div>
+
+              فريق ليستر
+            </div>
+
+
+            <div class="score">
+              1
+              <span class="vs">-</span>
+              2
+            </div>
+
+
+            <div class="team right">
+
+              <div class="crest">
+                أوه
+              </div>
+
+              فريق الأوهام
+
+            </div>
+
+          </div>
+
+
+          <div class="match-foot">
+
+            <span>
+              ⚽ عبد الباسط ماضي
+            </span>
+
+            <span>
+              ⚽ 2× حميد ثامري
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ==================== مباراة 2 ==================== -->
+        <div class="card match-card">
+
+          <div class="match-meta">
+
+            <span class="badge done">
+              انتهت
+            </span>
+
+            <span>
+              المجموعة الأولى
+            </span>
+
+          </div>
+
+
+          <div class="match-teams">
+
+            <div class="team">
+
+              <div class="crest">
+                ش.ي
+              </div>
+
+              شباب بن يعقوب
+
+            </div>
+
+
+            <div class="score">
+              3
+              <span class="vs">-</span>
+              0
+            </div>
+
+
+            <div class="team right">
+
+              <div class="crest">
+                قصا
+              </div>
+
+              فريق القصارة
+
+            </div>
+
+          </div>
+
+
+          <div class="match-foot">
+
+            <span>
+              ⚽ 2× شريكي زهير
+              <br>
+              ⚽ عوسمي عز الدين
+            </span>
+
+            <span></span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ==================== مباراة 3 ==================== -->
+        <div class="card match-card">
+
+          <div class="match-meta">
+
+            <span class="badge done">
+              انتهت
+            </span>
+
+            <span>
+              المجموعة الثانية
+            </span>
+
+          </div>
+
+
+          <div class="match-teams">
+
+            <div class="team">
+
+              <div class="crest">
+                أ.ش
+              </div>
+
+              فريق أمل عين الشهداء
+
+            </div>
+
+
+            <div class="score">
+              0
+              <span class="vs">-</span>
+              1
+            </div>
+
+
+            <div class="team right">
+
+              <div class="crest">
+                ع.ح
+              </div>
+
+              فريق عبد اللاوي حسان
+
+            </div>
+
+          </div>
+
+
+          <div class="match-foot">
+
+            <span></span>
+
+            <span>
+              ⚽ مويسة أحمد
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ==================== مباراة 4 ==================== -->
+        <div class="card match-card">
+
+          <div class="match-meta">
+
+            <span class="badge done">
+              انتهت
+            </span>
+
+            <span>
+              المجموعة الثانية
+            </span>
+
+          </div>
+
+
+          <div class="match-teams">
+
+            <div class="team">
+
+              <div class="crest">
+                ا.ز
+              </div>
+
+              اتلاتيك زنينة
+
+            </div>
+
+
+            <div class="score">
+              4
+              <span class="vs">-</span>
+              0
+            </div>
+
+
+            <div class="team right">
+
+              <div class="crest">
+                ب.ح
+              </div>
+
+              باريس الحاجب
+
+            </div>
+
+          </div>
+
+
+          <div class="match-foot">
+
+            <span>
+              ⚽ بن بوزيد بن عياش
+              <br>
+              ⚽ 3× صلاح خضاري
+            </span>
+
+            <span></span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ==================== مباراة 5 ==================== -->
+        <div class="card match-card">
+
+          <div class="match-meta">
+
+            <span class="badge done">
+              انتهت
+            </span>
+
+            <span>
+              المجموعة الثالثة
+            </span>
+
+          </div>
+
+
+          <div class="match-teams">
+
+            <div class="team">
+
+              <div class="crest">
+                أ.م
+              </div>
+
+              الأطرشي مصطفى
+
+            </div>
+
+
+            <div class="score">
+              2
+              <span class="vs">-</span>
+              1
+            </div>
+
+
+            <div class="team right">
+
+              <div class="crest">
+                ن.ع
+              </div>
+
+              نجوم عين الشهداء
+
+            </div>
+
+          </div>
+
+
+          <div class="match-foot">
+
+            <span>
+              ⚽ عمار بوشمال
+            </span>
+
+            <span>
+              ⚽ إسماعيل بوذانة
+            </span>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         المباريات التي لم تلعب
+    ================================================== -->
+    <section class="section">
+
+      <div class="section-head">
+
+        <h2>
+          مباريات لم تُلعب بعد
+        </h2>
+
+        <span class="meta">
+          الجولة الأولى — المجموعة الثالثة
+        </span>
+
+      </div>
+
+
+      <div class="grid">
+
+
+        <!-- ==================== مباراة قادمة ==================== -->
+        <div class="card match-card">
+
+          <div class="match-meta">
+
+            <span class="badge soon">
+              قريباً
+            </span>
+
+            <span>
+              المجموعة الثالثة
+            </span>
+
+          </div>
+
+
+          <div class="match-teams">
+
+            <div class="team">
+
+              <div class="crest">
+                أ.ع
+              </div>
+
+              أولمبيك عين الشهداء
+
+            </div>
+
+
+            <div class="score">
+
+              <span class="vs">
+                -
+              </span>
+
+            </div>
+
+
+            <div class="team right">
+
+              <div class="crest">
+                ت.ع
+              </div>
+
+              ترجي عين الشهداء
+
+            </div>
+
+          </div>
+
+
+          <p style="
+            color:var(--text-dim);
+            font-size:14.5px;
+            margin:0;
+          ">
+            يمكن متابعة موعد هذه المباراة في صفحة
+            «مباريات اليوم».
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="container">
+
+    <div class="brand">
+
+      <span class="dot"></span>
+
+      دورة المرحوم زحزاح أحمد
+
     </div>
 
-        <div class="grid">
+    <div>
+      موقع تجريبي لعرض نتائج وإحصائيات كرة القدم
+    </div>
 
-      <div class="card match-card">
-        <div class="match-meta">
-          <span class="badge done">قريباً</span>
-          <span>المجموعة الثالثة</span>
-        </div>
-        <div class="match-teams">
-          <div class="team"><div class="crest">أ.ع</div> أولمبيك عين الشهداء</div>
-          <div class="score">  <span class="vs">-</span> </div>
-          <div class="team right"><div class="crest">ت.ع</div> ترجي عين الشهداء</div>
-        </div>
-        <p style="color:var(--text-dim); font-size:14.5px; margin-top:-8px;">
-    يمكن متابعة موعد هذه المباريات في صفحة «مباريات اليوم».
-  </p>
-        </div>
-  </section>
+  </footer>
 
-</main>
-
-<footer class="container">
-  <div class="brand"><span class="dot"></span> دورة المرحوم زحزاح أحمد</div>
-  <div>موقع تجريبي لعرض نتائج وإحصائيات كرة القدم</div>
-</footer>
 
 </body>
 </html>
