@@ -117,10 +117,25 @@ html, body{
   }
   .match-card.min-height{ min-height: unset; }
 
-  /* الجداول (المجموعات / الإحصائيات) */
-  table{ font-size: 12px; min-width: 560px; }
-  thead th, tbody td{ padding: 9px 8px; }
-  .crest.small{ width: 24px; height: 24px; font-size: 9px; }
+  /* الجداول (المجموعات / الإحصائيات) — تبقى دايماً داخل عرض الشاشة،
+     بلا أي تمرير أفقي، حتى ما تختفيش الأعمدة */
+  .table-wrap{ overflow-x: visible; }
+  table{
+    width: 100%;
+    min-width: 0;
+    table-layout: fixed;
+    font-size: 11.5px;
+  }
+  thead th, tbody td{
+    padding: 7px 4px;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  /* أول عمود (اسم الفريق/اللاعب) ياخذ مساحة أكبر من بقية الأعمدة */
+  table tr > *:first-child{ width: 32%; text-align: right; }
+  .rank-cell{ gap: 5px; flex-wrap: wrap; }
+  .crest.small{ width: 22px; height: 22px; font-size: 8.5px; }
 
   /* قوائم اللاعبين */
   .squad{ grid-template-columns: 1fr; }
@@ -174,7 +189,8 @@ html, body{
   }
   .score{ order: 0; margin: 4px 0; }
 
-  table{ min-width: 480px; font-size: 11.5px; }
+  table{ font-size: 10.5px; }
+  thead th, tbody td{ padding: 6px 3px; }
 
   .stat-highlights{ grid-template-columns: 1fr 1fr; }
   .stat-card .stat-num{ font-size: 24px; }
