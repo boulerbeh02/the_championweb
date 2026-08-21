@@ -73,6 +73,8 @@ body{
   min-height:100vh;
 
 }
+.crest{ width:34px; height:34px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-family:'Almarai',sans-serif; font-weight:800; font-size:12px; background:var(--green-deep); color:var(--yellow); border:1px solid var(--border-green); flex-shrink:0; }
+
 
 
 h1,
