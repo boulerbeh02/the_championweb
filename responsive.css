@@ -120,29 +120,37 @@ html, body{
   .match-foot span{
     flex: 1 1 48%;
     min-width: 0;
-    word-break: break-word;
-    overflow-wrap: anywhere;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
   .match-card.min-height{ min-height: unset; }
 
-  /* الجداول (المجموعات / الإحصائيات) — تبقى دايماً داخل عرض الشاشة،
-     بلا أي تمرير أفقي، حتى ما تختفيش الأعمدة */
-  .table-wrap{ overflow-x: visible; }
+  /* الجداول (المجموعات / الإحصائيات) — كل عمود ياخذ المساحة يلي
+     يحتاجها حسب محتواه (بلا تقسيم متساوي إجباري)، وما ينكسرش
+     أي عمود إلا عمود الاسم، وعند الفراغ بين الكلمات فقط */
+  .table-wrap{
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
   table{
     width: 100%;
     min-width: 0;
-    table-layout: fixed;
-    font-size: 11.5px;
+    table-layout: auto;
+    font-size: 11px;
   }
   thead th, tbody td{
-    padding: 7px 4px;
-    white-space: normal;
-    word-break: break-word;
-    overflow-wrap: anywhere;
+    padding: 7px 5px;
+    white-space: nowrap;
   }
-  /* أول عمود (اسم الفريق/اللاعب) ياخذ مساحة أكبر من بقية الأعمدة */
-  table tr > *:first-child{ width: 32%; text-align: right; }
-  .rank-cell{ gap: 5px; flex-wrap: wrap; }
+  /* عمود اسم الفريق/اللاعب فقط: يسمح له يلف عند الفراغ بين الكلمات */
+  table tr > *:first-child{
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: break-word;
+    width: 30%;
+    text-align: right;
+  }
+  .rank-cell{ gap: 5px; }
   .crest.small{ width: 22px; height: 22px; font-size: 8.5px; }
 
   /* قوائم اللاعبين */
@@ -197,8 +205,8 @@ html, body{
   }
   .score{ order: 0; margin: 4px 0; }
 
-  table{ font-size: 10.5px; }
-  thead th, tbody td{ padding: 6px 3px; }
+  table{ font-size: 10px; }
+  thead th, tbody td{ padding: 6px 4px; }
 
   .stat-highlights{ grid-template-columns: 1fr 1fr; }
   .stat-card .stat-num{ font-size: 24px; }
