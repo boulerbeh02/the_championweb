@@ -111,9 +111,17 @@ html, body{
     padding: 4px 8px;
   }
   .match-foot{
-    flex-direction: column;
-    gap: 4px;
-    font-size: 11.5px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 11px;
+  }
+  .match-foot span{
+    flex: 1 1 48%;
+    min-width: 0;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
   .match-card.min-height{ min-height: unset; }
 
