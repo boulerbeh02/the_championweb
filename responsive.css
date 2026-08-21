@@ -33,6 +33,16 @@ html, body{
 /* ---------------- هواتف (760px وأصغر) ---------------- */
 @media (max-width: 760px){
 
+  /* الهيدر ما يبقاش "عالق" (sticky) فالجوال — يخلي مساحة أكبر
+     ويمنع أي إحساس بأنه "راكب" فوق المحتوى */
+  .site-header{
+    position: static;
+  }
+  main.container{
+    position: relative;
+    z-index: 1;
+  }
+
   /* الهيدر والقائمة */
   .header-top{
     flex-direction: column;
