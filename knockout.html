@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأدوار الإقصائية — دورة المرحوم زحزاح أحمد</title>
+<link rel="stylesheet" href="knockout.css">
+<link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-top">
+    <div class="brand">
+      <span class="dot"></span> دورة المرحوم زحزاح أحمد <span class="sub">لكرة القدم</span>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">النتائج</a>
+      <a href="today.html">مباريات</a>
+      <a href="groups.html">المجموعات</a>
+      <a href="knockout.html" class="active">الأدوار الإقصائية</a>
+      <a href="stats.html">الإحصائيات</a>
+      <a href="teams.html">الفرق المشاركة</a>
+    </nav>
+  </div>
+  <div class="ticker-wrap">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div class="eyebrow">بعد نهاية دور المجموعات</div>
+    <h1>الأدوار الإقصائية</h1>
+    <p>ربع النهائي، نصف النهائي، والنهائي — تتحدد الفرق المتأهلة تلقائياً مع تقدّم الدورة، وتُدار من لوحة التحكم.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>مخطط الأدوار الإقصائية</h2>
+      <span class="meta" id="koMeta"></span>
+    </div>
+    <div class="bracket">
+      <div class="bracket-col">
+        <h3>ربع النهائي</h3>
+        <div id="qfContainer"></div>
+      </div>
+      <div class="bracket-col sf">
+        <h3>نصف النهائي</h3>
+        <div id="sfContainer"></div>
+      </div>
+      <div class="bracket-col final">
+        <h3>النهائي</h3>
+        <div id="finalContainer"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="container">
+  <div class="brand"><span class="dot"></span> دورة المرحوم زحزاح أحمد</div>
+  <div>موقع تجريبي لعرض نتائج وإحصائيات كرة القدم</div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+
+function koCardHtml(m, extraClass) {
+  const home = m.home || "";
+  const away = m.away || "";
+  const homeTxt = home ? home : "لم يتحدد بعد";
+  const awayTxt = away ? away : "لم يتحدد بعد";
+  const finished = m.status === "finished";
+  return `
+    <div class="ko-card ${extraClass || ""}">
+      <div class="ko-team">
+        <span class="name ${home ? "" : "tbd"}">${homeTxt}</span>
+        <span class="pts">${finished ? m.homeScore : "-"}</span>
+      </div>
+      <div class="ko-vs">×</div>
+      <div class="ko-team">
+        <span class="name ${away ? "" : "tbd"}">${awayTxt}</span>
+        <span class="pts">${finished ? m.awayScore : "-"}</span>
+      </div>
+      ${(m.date || m.time) ? `<div class="ko-meta"><span>${m.date || ""}</span><span>${m.time || ""}</span></div>` : ""}
+    </div>`;
+}
+
+/* الشريط المتحرك */
+const tickerTrack = document.getElementById("tickerTrack");
+const finishedKO = getKnockoutMatches().filter(m => m.status === "finished");
+const tickerItems = finishedKO.length
+  ? finishedKO.map(m => `<span>${m.stage}</span> ${m.home} ${m.homeScore} - ${m.awayScore} ${m.away}`)
+  : [`<span>الأدوار الإقصائية</span> تنطلق بعد نهاية دور المجموعات`];
+tickerTrack.innerHTML = tickerItems.concat(tickerItems).join("");
+
+document.getElementById("koMeta").textContent = finishedKO.length
+  ? `${finishedKO.length} مباريات منتهية`
+  : "لم تنطلق بعد";
+
+document.getElementById("qfContainer").innerHTML =
+  getKnockoutStage("ربع النهائي").map(m => koCardHtml(m)).join("");
+
+document.getElementById("sfContainer").innerHTML =
+  getKnockoutStage("نصف النهائي").map(m => koCardHtml(m)).join("");
+
+document.getElementById("finalContainer").innerHTML =
+  getKnockoutStage("النهائي").map(m => koCardHtml(m, "final")).join("");
+
+</script>
+
+</body>
+</html>
