@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة التحكم — دورة المرحوم زحزاح أحمد</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- شاشة الدخول -->
+<div class="login-box" id="login-box">
+  <h1>لوحة التحكم</h1>
+  <p>أدخل كلمة السر للوصول إلى تعديل النتائج والفرق</p>
+  <input type="password" id="password-input" placeholder="كلمة السر">
+  <button class="btn-primary" style="width:100%" onclick="tryLogin()">دخول</button>
+  <div id="login-error" style="color:#e88; font-size:12.5px; margin-top:10px;"></div>
+  <div class="warn">⚠ هذه حماية بسيطة لمنع التعديل العرضي، وليست حماية أمنية قوية.</div>
+</div>
+
+<!-- التطبيق الرئيسي -->
+<div class="container hidden" id="app">
+  <div class="admin-header">
+    <div class="brand"><span class="dot"></span> لوحة تحكم الدورة</div>
+    <div class="toolbar">
+      <button class="btn-ghost btn-sm" onclick="window.open('index.html','_blank')">النتائج ↗</button>
+      <button class="btn-ghost btn-sm" onclick="window.open('groups.html','_blank')">المجموعات ↗</button>
+      <button class="btn-ghost btn-sm" onclick="window.open('stats.html','_blank')">الإحصائيات ↗</button>
+      <button class="btn-ghost btn-sm" onclick="downloadData()">⬇ تنزيل data.json</button>
+      <label class="btn-ghost btn-sm" style="cursor:pointer;">
+        ⬆ استيراد ملف
+        <input type="file" accept="application/json" id="import-input" style="display:none" onchange="importData(event)">
+      </label>
+      <button class="btn-danger btn-sm" onclick="resetData()">إعادة تعيين</button>
+      <button class="btn-ghost btn-sm" onclick="logout()">خروج</button>
+    </div>
+  </div>
+
+  <p class="hint">
+    كل تعديل يُحفظ تلقائياً في هذا المتصفح فقط (localStorage). لنشره لكل الزوار على GitHub Pages،
+    اضغط <b>«تنزيل data.json»</b> ثم استبدل نفس الملف في مستودع GitHub (سحب وإفلات، بدون أكواد).
+    التفاصيل في README.md.
+  </p>
+
+  <div class="tabs">
+    <button class="active" onclick="switchTab('matches')" id="tab-btn-matches">النتائج</button>
+    <button onclick="switchTab('knockout')" id="tab-btn-knockout">الدور الإقصائي</button>
+    <button onclick="switchTab('teams')" id="tab-btn-teams">الأندية واللاعبون</button>
+  </div>
+
+  <!-- تبويب النتائج -->
+  <div id="tab-matches">
+    <div class="panel">
+      <h2>كل المباريات</h2>
+      <table class="admin-table" id="matches-table"></table>
+      <button class="btn-primary btn-sm" onclick="addNewMatch()">+ إضافة مباراة جديدة</button>
+    </div>
+
+    <div class="panel hidden" id="match-editor">
+      <h2>تعديل المباراة</h2>
+      <div id="match-editor-body"></div>
+      <button class="btn-primary" onclick="saveMatchEditor()">💾 حفظ المباراة</button>
+      <button class="btn-ghost" onclick="closeMatchEditor()">إلغاء</button>
+    </div>
+  </div>
+
+  <!-- تبويب الدور الإقصائي -->
+  <div id="tab-knockout" class="hidden">
+    <div class="panel">
+      <h2>ربع النهائي، نصف النهائي، والنهائي</h2>
+      <p class="hint">المباريات السبع ثابتة (ما تنحذفش وما تتزادش)، تقدر غير تعدل الفريقين والنتيجة فكل وحدة.</p>
+      <table class="admin-table" id="knockout-table"></table>
+    </div>
+
+    <div class="panel hidden" id="ko-editor">
+      <h2>تعديل مباراة إقصائية</h2>
+      <div id="ko-editor-body"></div>
+      <button class="btn-primary" onclick="saveKoEditor()">💾 حفظ المباراة</button>
+      <button class="btn-ghost" onclick="closeKoEditor()">إلغاء</button>
+    </div>
+  </div>
+
+  <!-- تبويب الأندية -->
+  <div id="tab-teams" class="hidden">
+    <div class="panel">
+      <h2>اختر نادياً</h2>
+      <div class="field">
+        <select id="team-select" onchange="renderSquadEditor()"></select>
+      </div>
+      <div id="squad-editor"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
