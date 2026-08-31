@@ -2,45 +2,7 @@
    استيراد CSS الأساسي + تنسيقات المخطط الشجري للأدوار الإقصائية
    ============================================================ */
 @import url('index.css');
-/* منع الشعار واسم الفريق من الالتفاف تحت بعضهما */
-.match-teams {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  width: 100%;
-}
 
-.team {
-  display: flex !important;
-  flex-direction: row !important; /* يضمن إبقاء الشعار بجانب الاسم */
-  align-items: center;
-  gap: 8px;
-  flex: 1;
-  white-space: nowrap; /* يمنع نزول الاسم لسطر جديد */
-}
-
-.team.right {
-  flex-direction: row-reverse !important; /* للفريق الأيسر/الثاني */
-  text-align: left;
-}
-
-/* تنسيق النتيجة والأقواس بشكل سليم ومستقيم */
-.score {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  font-family: 'Almarai', sans-serif;
-  direction: ltr; /* لضمان قراءة الأرقام والأقواس من اليسار لليمين بدون تداخل */
-  white-space: nowrap;
-}
-
-.score .penalties {
-  font-size: 11px;
-  color: var(--yellow);
-  font-weight: normal;
-}
 
 /* تنسيق Crest في جدول الترتيب */
 .rank-cell .crest {
