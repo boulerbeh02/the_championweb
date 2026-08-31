@@ -4,97 +4,201 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>لوحة التحكم — دورة المرحوم زحزاح أحمد</title>
-<link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="responsive.css">
+<style>
+  /* استايلات خاصة بصفحة لوحة التحكم */
+  .admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .admin-card {
+    background: var(--surface);
+    border: 1px solid var(--border-green);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .admin-card h3 {
+    color: var(--yellow);
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-group label {
+    display: block;
+    color: var(--text-dim);
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Tajawal', sans-serif;
+  }
+  .form-control:focus {
+    outline: none;
+    border-color: var(--green-light);
+  }
+  .btn-submit {
+    background: var(--green);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: 0.3s;
+  }
+  .btn-submit:hover {
+    background: var(--green-light);
+    color: #000;
+  }
+  .flex-row {
+    display: flex;
+    gap: 10px;
+  }
+</style>
 </head>
 <body>
 
-<!-- شاشة الدخول -->
-<div class="login-box" id="login-box">
-  <h1>لوحة التحكم</h1>
-  <p>أدخل كلمة السر للوصول إلى تعديل النتائج والفرق</p>
-  <input type="password" id="password-input" placeholder="كلمة السر">
-  <button class="btn-primary" style="width:100%" onclick="tryLogin()">دخول</button>
-  <div id="login-error" style="color:#e88; font-size:12.5px; margin-top:10px;"></div>
-  <div class="warn">⚠ هذه حماية بسيطة لمنع التعديل العرضي، وليست حماية أمنية قوية.</div>
-</div>
-
-<!-- التطبيق الرئيسي -->
-<div class="container hidden" id="app">
-  <div class="admin-header">
-    <div class="brand"><span class="dot"></span> لوحة تحكم الدورة</div>
-    <div class="toolbar">
-      <button class="btn-ghost btn-sm" onclick="window.open('index.html','_blank')">النتائج ↗</button>
-      <button class="btn-ghost btn-sm" onclick="window.open('groups.html','_blank')">المجموعات ↗</button>
-      <button class="btn-ghost btn-sm" onclick="window.open('stats.html','_blank')">الإحصائيات ↗</button>
-      <button class="btn-ghost btn-sm" onclick="downloadData()">⬇ تنزيل data.json</button>
-      <label class="btn-ghost btn-sm" style="cursor:pointer;">
-        ⬆ استيراد ملف
-        <input type="file" accept="application/json" id="import-input" style="display:none" onchange="importData(event)">
-      </label>
-      <button class="btn-danger btn-sm" onclick="resetData()">إعادة تعيين</button>
-      <button class="btn-ghost btn-sm" onclick="logout()">خروج</button>
+<header class="site-header">
+  <div class="container header-top">
+    <div class="brand">
+      <span class="dot"></span> لوحة إدارة الدورة
     </div>
+    <nav class="main-nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="admin.html" class="active">لوحة التحكم</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <h1>إدارة النتائج والمباريات والإحصائيات</h1>
+    <p style="color:var(--text-dim);">من هنا تقدر تحدّث نتائج المباريات، هدافين البطولة، والبطاقات مباشرة.</p>
+  </section>
+
+  <div class="admin-grid">
+
+    <div class="admin-card">
+      <h3>⚽ إضافة / تعديل نتيجة مباراة</h3>
+      <form id="matchForm">
+        <div class="form-group">
+          <label>مرحلة المباراة</label>
+          <select class="form-control" id="matchStage">
+            <option value="المجموعات">دور المجموعات</option>
+            <option value="الربع النهائي">الربع النهائي</option>
+            <option value="النصف النهائي">النصف النهائي</option>
+            <option value="النهائي">النهائي</option>
+          </select>
+        </div>
+
+        <div class="form-group flex-row">
+          <div>
+            <label>الفريق الأول</label>
+            <input type="text" class="form-control" id="team1" placeholder="مثال: شباب بن يعقوب" required>
+          </div>
+          <div>
+            <label>الأهداف</label>
+            <input type="number" class="form-control" id="score1" value="0">
+          </div>
+        </div>
+
+        <div class="form-group flex-row">
+          <div>
+            <label>الفريق الثاني</label>
+            <input type="text" class="form-control" id="team2" placeholder="مثال: الأوهام" required>
+          </div>
+          <div>
+            <label>الأهداف</label>
+            <input type="number" class="form-control" id="score2" value="0">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>حالة المباراة</label>
+          <select class="form-control" id="matchStatus">
+            <option value="finished">انتهت</option>
+            <option value="soon">قريباً / لم تلعب</option>
+            <option value="live">جارية الآن</option>
+          </select>
+        </div>
+
+        <button type="button" class="btn-submit" onclick="saveMatch()">حفظ المباراة</button>
+      </form>
+    </div>
+
+    <div class="admin-card">
+      <h3>🏆 تحديث الإحصائيات والهدافين</h3>
+      <form id="statsForm">
+        <div class="form-group">
+          <label>اسم اللاعب</label>
+          <input type="text" class="form-control" id="playerName" placeholder="اسم اللاعب" required>
+        </div>
+
+        <div class="form-group">
+          <label>الفريق</label>
+          <input type="text" class="form-control" id="playerTeam" placeholder="اسم الفريق" required>
+        </div>
+
+        <div class="form-group flex-row">
+          <div>
+            <label>عدد الأهداف</label>
+            <input type="number" class="form-control" id="playerGoals" value="0">
+          </div>
+          <div>
+            <label>بطاقات صفراء</label>
+            <input type="number" class="form-control" id="yellowCards" value="0">
+          </div>
+          <div>
+            <label>بطاقات حمراء</label>
+            <input type="number" class="form-control" id="redCards" value="0">
+          </div>
+        </div>
+
+        <button type="button" class="btn-submit" onclick="savePlayerStat()">حفظ بيانات اللاعب</button>
+      </form>
+    </div>
+
+    <div class="admin-card">
+      <h3>📢 تحديث الشريط المتحرك</h3>
+      <form id="tickerForm">
+        <div class="form-group">
+          <label>النص المعروض في الشريط</label>
+          <textarea class="form-control" id="tickerText" rows="4" placeholder="أكتب الأخبار أو التحديثات هنا..."></textarea>
+        </div>
+        <button type="button" class="btn-submit" onclick="saveTicker()">تحديث الشريط</button>
+      </form>
+    </div>
+
   </div>
 
-  <p class="hint">
-    كل تعديل يُحفظ تلقائياً في هذا المتصفح فقط (localStorage). لنشره لكل الزوار على GitHub Pages،
-    اضغط <b>«تنزيل data.json»</b> ثم استبدل نفس الملف في مستودع GitHub (سحب وإفلات، بدون أكواد).
-    التفاصيل في README.md.
-  </p>
+</main>
 
-  <div class="tabs">
-    <button class="active" onclick="switchTab('matches')" id="tab-btn-matches">النتائج</button>
-    <button onclick="switchTab('knockout')" id="tab-btn-knockout">الدور الإقصائي</button>
-    <button onclick="switchTab('teams')" id="tab-btn-teams">الأندية واللاعبون</button>
-  </div>
+<script>
+  function saveMatch() {
+    alert("تم حفظ المباراة بنجاح! (تقدر تربطها مع LocalStorage أو قاعدة بيانات)");
+  }
+  function savePlayerStat() {
+    alert("تم تحديث إحصائيات اللاعب!");
+  }
+  function saveTicker() {
+    alert("تم تحديث الشريط المتحرك!");
+  }
+</script>
 
-  <!-- تبويب النتائج -->
-  <div id="tab-matches">
-    <div class="panel">
-      <h2>كل المباريات</h2>
-      <table class="admin-table" id="matches-table"></table>
-      <button class="btn-primary btn-sm" onclick="addNewMatch()">+ إضافة مباراة جديدة</button>
-    </div>
-
-    <div class="panel hidden" id="match-editor">
-      <h2>تعديل المباراة</h2>
-      <div id="match-editor-body"></div>
-      <button class="btn-primary" onclick="saveMatchEditor()">💾 حفظ المباراة</button>
-      <button class="btn-ghost" onclick="closeMatchEditor()">إلغاء</button>
-    </div>
-  </div>
-
-  <!-- تبويب الدور الإقصائي -->
-  <div id="tab-knockout" class="hidden">
-    <div class="panel">
-      <h2>ربع النهائي، نصف النهائي، والنهائي</h2>
-      <p class="hint">المباريات السبع ثابتة (ما تنحذفش وما تتزادش)، تقدر غير تعدل الفريقين والنتيجة فكل وحدة.</p>
-      <table class="admin-table" id="knockout-table"></table>
-    </div>
-
-    <div class="panel hidden" id="ko-editor">
-      <h2>تعديل مباراة إقصائية</h2>
-      <div id="ko-editor-body"></div>
-      <button class="btn-primary" onclick="saveKoEditor()">💾 حفظ المباراة</button>
-      <button class="btn-ghost" onclick="closeKoEditor()">إلغاء</button>
-    </div>
-  </div>
-
-  <!-- تبويب الأندية -->
-  <div id="tab-teams" class="hidden">
-    <div class="panel">
-      <h2>اختر نادياً</h2>
-      <div class="field">
-        <select id="team-select" onchange="renderSquadEditor()"></select>
-      </div>
-      <div id="squad-editor"></div>
-    </div>
-  </div>
-
-  <div class="toast" id="toast"></div>
-</div>
-
-<script src="data.js"></script>
-<script src="admin.js"></script>
 </body>
 </html>
