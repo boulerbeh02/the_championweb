@@ -24,24 +24,28 @@
     </nav>
   </div>
   <div class="ticker-wrap">
-    <div class="ticker-track" id="tickerTrack"></div>
+    <div class="ticker-track" id="tickerTrack">
+      <span>جديد:</span> انطلاق الأدوار الإقصائية لدورة المرحوم زحزاح أحمد!
+    </div>
   </div>
 </header>
 
 <main class="container">
 
+  <!-- قسم الـ Hero -->
   <section class="hero">
     <div class="eyebrow">بعد نهاية دور المجموعات</div>
     <h1>الأدوار الإقصائية</h1>
-    <p>ربع النهائي، نصف النهائي، والنهائي — تتحدد الفرق المتأهلة تلقائياً مع تقدّم الدورة، وتُدار من لوحة التحكم.</p>
+    <p>جدول الترتيب، مخطط المواجهات الشجري، وتفاصيل مباريات ربع النهائي ونصف النهائي والنهائي.</p>
   </section>
 
+  <!-- 1. جدول الفرق المتأهلة -->
   <section class="section">
     <div class="section-head">
       <h2>الفرق المتأهلة</h2>
-      <span class="meta" id="koMeta"></span>
+      <span class="meta">ترتيب الفرق المتأهلة للأدوار الإقصائية</span>
     </div>
-     <div class="table-wrap">
+    <div class="table-wrap">
       <table>
         <thead>
           <tr>
@@ -57,187 +61,235 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="rank-cell">1 -<div class="crest" style="width:26px;height:26px;font-size:10px;">أ.ز</div> فريق اتلاتيك زنينة</td>
+          <tr class="top">
+            <td class="rank-cell">1 - <div class="crest">أ.ز</div> أتلاتيك زنينة</td>
             <td class="center">3</td><td class="center">2</td><td class="center">1</td><td class="center">0</td><td class="center">11</td><td class="center">3</td>
             <td class="center">8+</td><td class="center">7</td>
           </tr>
-          <tr>
-            <td class="rank-cell">2 -<div class="crest" style="width:26px;height:26px;font-size:10px;">ش.ي</div>فريق شباب بن يعقوب</td>
+          <tr class="top">
+            <td class="rank-cell">2 - <div class="crest">ش.ي</div> شباب بن يعقوب</td>
             <td class="center">3</td><td class="center">2</td><td class="center">1</td><td class="center">0</td><td class="center">7</td><td class="center">2</td>
             <td class="center">5+</td><td class="center">7</td>
           </tr>
-          <tr>
-            <td class="rank-cell">3 -<div class="crest" style="width:26px;height:26px;font-size:10px;">أ.ع</div>فريق أولمبيك عين الشهداء</td>
+          <tr class="top">
+            <td class="rank-cell">3 - <div class="crest">أ.ع</div> أولمبيك عين الشهداء</td>
             <td class="center">3</td><td class="center">2</td><td class="center">1</td><td class="center">0</td><td class="center">7</td><td class="center">4</td>
             <td class="center">3+</td><td class="center">7</td>
           </tr>
-          <tr>
-            <td class="rank-cell">4 -<div class="crest" style="width:26px;height:26px;font-size:10px;">ب.ح</div>فريق باريس الحاجب</td>
+          <tr class="top">
+            <td class="rank-cell">4 - <div class="crest">ب.ح</div> باريس الحاجب</td>
             <td class="center">3</td><td class="center">2</td><td class="center">0</td><td class="center">1</td><td class="center">7</td><td class="center">7</td>
             <td class="center">0</td><td class="center">6</td>
           </tr>
-          <tr>
-            <td class="rank-cell">5 -<div class="crest" style="width:26px;height:26px;font-size:10px;">ن.ع</div>فريق نجوم عين الشهداء</td>
+          <tr class="top">
+            <td class="rank-cell">5 - <div class="crest">ن.ع</div> نجوم عين الشهداء</td>
             <td class="center">3</td><td class="center">1</td><td class="center">2</td><td class="center">0</td><td class="center">4</td><td class="center">1</td>
             <td class="center">3+</td><td class="center">5</td>
           </tr>
-          <tr>
-            <td class="rank-cell">6 -<div class="crest" style="width:26px;height:26px;font-size:10px;">أوه</div> فريق الأوهام</td>
+          <tr class="top">
+            <td class="rank-cell">6 - <div class="crest">أوه</div> الأوهام</td>
             <td class="center">3</td><td class="center">1</td><td class="center">2</td><td class="center">0</td><td class="center">3</td><td class="center">2</td>
             <td class="center">1+</td><td class="center">5</td>
           </tr>
-          <tr>
-            <td class="rank-cell">7 -<div class="crest" style="width:26px;height:26px;font-size:10px;">أ.م</div> فريق الأطرشي مصطفى</td>
+          <tr class="top">
+            <td class="rank-cell">7 - <div class="crest">أ.م</div> الأطرشي مصطفى</td>
             <td class="center">3</td><td class="center">1</td><td class="center">1</td><td class="center">1</td><td class="center">3</td><td class="center">3</td>
             <td class="center">0</td><td class="center">4</td>
           </tr>
-          <tr>
-            <td class="rank-cell">8 -<div class="crest" style="width:26px;height:26px;font-size:10px;">ع.ح</div> فريق عبد اللاوي حسان</td>
+          <tr class="top">
+            <td class="rank-cell">8 - <div class="crest">ع.ح</div> عبد اللاوي حسان</td>
             <td class="center">3</td><td class="center">1</td><td class="center">1</td><td class="center">1</td><td class="center">6</td><td class="center">8</td>
             <td class="center">2-</td><td class="center">4</td>
           </tr>
-        
         </tbody>
       </table>
     </div>
-      <section class="section">
+  </section>
+
+  <!-- 2. مخطط الأدوار الإقصائية الشجري (2D Bracket Chart) -->
+  <section class="section">
     <div class="section-head">
-      <h2>مخطط الأدوار الإقصائية</h2>
-      <span class="meta" id="koMeta"></span>
+      <h2>مخطط المواجهات (Bracket Tree)</h2>
+      <span class="meta">مسار الفرق نحو الكأس</span>
     </div>
-    <div class="bracket">
-      <div class="bracket-col">
-        <h3>ربع النهائي</h3>
-        <div id="qfContainer">
-          <div class="grid">
-
     
-       <div class="card match-card">
-        <div class="match-meta">
-          <span class="badge soon">انتهت</span>
-          <span>المباراة الثالثة</span>
-        </div>
-        <div class="match-teams">
-          <div class="team"><div class="crest">أ.ع</div> فريق أولمبيك عين الشهداء </div>
-          <div class="score">
-           0 
-            <span class="vs">-</span>
-          2
+    <div class="bracket-wrap">
+      <div class="bracket-tree">
+        
+        <!-- ربع النهائي -->
+        <div class="bracket-stage">
+          <div class="stage-title">الربع النهائي</div>
+          
+          <div class="bracket-match">
+            <div class="bracket-team winner">
+              <span class="name">عبد اللاوي حسان</span>
+              <span class="pts">5</span>
+            </div>
+            <div class="bracket-team">
+              <span class="name">أتلاتيك زنينة</span>
+              <span class="pts">1</span>
+            </div>
           </div>
-          <div class="team right"><div class="crest">أوه</div> فريق الأوهام </div>
-        </div>
-           <div class="match-foot">
-          <span>
-            ⚽   محمدي عمر 
-          </span>
-          <span>
-          ⚽  عبد السلام بوشاقور 
-            <br>
-         2×  ⚽ حميد ثامري
-        <br> 
-            ⚽ رشيد طويل
-            <br>  <hr>
-            🟨 عبد السلام بوشاقور
-          </span>
+
+          <div class="bracket-match">
+            <div class="bracket-team winner">
+              <span class="name">شباب بن يعقوب</span>
+              <span class="pts">6</span>
+            </div>
+            <div class="bracket-team">
+              <span class="name">الأطرشي مصطفى</span>
+              <span class="pts">2</span>
+            </div>
           </div>
-       
+
+          <div class="bracket-match">
+            <div class="bracket-team winner">
+              <span class="name">الأوهام</span>
+              <span class="pts">2</span>
+            </div>
+            <div class="bracket-team">
+              <span class="name">أولمبيك عين الشهداء</span>
+              <span class="pts">0</span>
+            </div>
+          </div>
+
+          <div class="bracket-match">
+            <div class="bracket-team tbd">
+              <span class="name">نجوم عين الشهداء</span>
+              <span class="pts">-</span>
+            </div>
+            <div class="bracket-team tbd">
+              <span class="name">باريس الحاجب</span>
+              <span class="pts">-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- نصف النهائي -->
+        <div class="bracket-stage">
+          <div class="stage-title">النصف النهائي</div>
+          
+          <div class="bracket-match">
+            <div class="bracket-team tbd">
+              <span class="name">عبد اللاوي حسان</span>
+              <span class="pts">-</span>
+            </div>
+            <div class="bracket-team tbd">
+              <span class="name">شباب بن يعقوب</span>
+              <span class="pts">-</span>
+            </div>
+          </div>
+
+          <div class="bracket-match">
+            <div class="bracket-team tbd">
+              <span class="name">الأوهام</span>
+              <span class="pts">-</span>
+            </div>
+            <div class="bracket-team tbd">
+              <span class="name">فائز (م4)</span>
+              <span class="pts">-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- النهائي -->
+        <div class="bracket-stage">
+          <div class="stage-title">النهائي 🏆</div>
+          
+          <div class="bracket-match final-match">
+            <div class="trophy-badge">🏆</div>
+            <div class="bracket-team tbd">
+              <span class="name">متأهل 1</span>
+              <span class="pts">-</span>
+            </div>
+            <div class="bracket-team tbd">
+              <span class="name">متأهل 2</span>
+              <span class="pts">-</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. كروت تفاصيل المباريات الإقصائية -->
+  <section class="section">
+    <div class="section-head">
+      <h2>تفاصيل المباريات الإقصائية</h2>
+      <span class="meta">نتائج وأحداث مباريات الأدوار الحاسمة</span>
     </div>
 
-     <div class="card match-card">
+    <div class="grid">
+
+      <!-- المباراة 1 -->
+      <div class="card match-card">
         <div class="match-meta">
-          <span class="badge soon">انتهت</span>
-          <span>المباراة الثانية</span>
+          <span class="badge done">انتهت</span>
+          <span>المباراة الأولى — ربع النهائي</span>
         </div>
         <div class="match-teams">
-          <div class="team"><div class="crest">ش.ي</div> فريق شباب بن يعقوب </div>
-          <div class="score">
-            6
-            <span class="vs">-</span>
-          2
-          </div>
-          <div class="team right"><div class="crest">أ.ع</div> فريق الأطرشي مصطفى </div>
+          <div class="team"><div class="crest">أ.ز</div> أتلاتيك زنينة</div>
+          <div class="score">1 <span class="vs">-</span> 5</div>
+          <div class="team right"><div class="crest">ع.ح</div> عبد اللاوي حسان</div>
         </div>
         <div class="match-foot">
-          <span>
-          3×  ⚽عويسي نور الدين
-            <br>
-             ⚽هاني بلقاسم
-            <br>
-            ⚽ مصطفى الاطرشي (هدف عكسي )
-            <br>
-            ⚽  حمزة محمد
-          </span>
-          <span>
-          ⚽  خريفي أحمد
-            <br>
-           ⚽ الاطرشي عمر
-          </span>
-          </div>
-        </div>
-       <div class="card match-card">
-        <div class="match-meta">
-          <span class="badge soon">انتهت</span>
-          <span>المباراة الأولى</span>
-        </div>
-        <div class="match-teams">
-          <div class="team"><div class="crest"> أ.ز </div> فريق أتلاتيك زنينة </div>
-          <div class="score">
-            1
-            <span class="vs">-</span>
-          5
-          </div>
-          <div class="team right"><div class="crest">ع.ح</div> فريق عبد اللاوي حسان </div>
-        </div>
-        <div class="match-foot">
-          <span>
-          ⚽ بشير كحول  
-         <br><hr>
-          🟥  خضاري سمير
-          </span>
-          <span>
-   2×   ⚽ علوط بلقاسم
-          <br>
-  ⚽ أكرم رابحي
-            <br>
-         2×   ⚽   أحمد مليك
-        <br> <hr>
-          🟨 أكرم رابحي  
-          </span>
+          <span>⚽ بشير كحول<br>🟥 خضاري سمير</span>
+          <span>2× ⚽ علوط بلقاسم<br>⚽ أكرم رابحي<br>2× ⚽ أحمد مليك<br>🟨 أكرم رابحي</span>
         </div>
       </div>
-    
 
-        
+      <!-- المباراة 2 -->
+      <div class="card match-card">
+        <div class="match-meta">
+          <span class="badge done">انتهت</span>
+          <span>المباراة الثانية — ربع النهائي</span>
+        </div>
+        <div class="match-teams">
+          <div class="team"><div class="crest">ش.ي</div> شباب بن يعقوب</div>
+          <div class="score">6 <span class="vs">-</span> 2</div>
+          <div class="team right"><div class="crest">أ.م</div> الأطرشي مصطفى</div>
+        </div>
+        <div class="match-foot">
+          <span>3× ⚽ عويسي نور الدين<br>⚽ هاني بلقاسم<br>⚽ مصطفى الأطرشي (ذاتي)<br>⚽ حمزة محمد</span>
+          <span>⚽ خريفي أحمد<br>⚽ الأطرشي عمر</span>
+        </div>
+      </div>
 
+      <!-- المباراة 3 -->
+      <div class="card match-card">
+        <div class="match-meta">
+          <span class="badge done">انتهت</span>
+          <span>المباراة الثالثة — ربع النهائي</span>
+        </div>
+        <div class="match-teams">
+          <div class="team"><div class="crest">أ.ع</div> أولمبيك عين الشهداء</div>
+          <div class="score">0 <span class="vs">-</span> 2</div>
+          <div class="team right"><div class="crest">أوه</div> الأوهام</div>
+        </div>
+        <div class="match-foot">
+          <span>⚽ محمدي عمر</span>
+          <span>⚽ عبد السلام بوشاقور<br>2× ⚽ حميد ثامري<br>⚽ رشيد طويل<br>🟨 عبد السلام بوشاقور</span>
+        </div>
+      </div>
+
+      <!-- المباراة 4 -->
       <div class="card match-card">
         <div class="match-meta">
           <span class="badge soon">قريباً</span>
-          <span>المباراة الرابعة</span>
+          <span>المباراة الرابعة — ربع النهائي</span>
         </div>
         <div class="match-teams">
-          <div class="team"><div class="crest">ن.ع</div> فريق نجوم عين الشهداء </div>
+          <div class="team"><div class="crest">ن.ع</div> نجوم عين الشهداء</div>
           <div class="score"><span class="vs">17:45</span></div>
-          <div class="team right"><div class="crest">ب.ح</div> فريق باريس الحاجب </div>
+          <div class="team right"><div class="crest">ب.ح</div> باريس الحاجب</div>
         </div>
         <div class="match-foot">
-        <span>31/09/2026</span>
-        <span></span>
-      </div>
-        </div>
-    </div>
-      
-    </div>
+          <span>التاريخ: 31/08/2026</span>
+          <span>الملعب البلدي</span>
         </div>
       </div>
-      <div class="bracket-col sf">
-        <h3>نصف النهائي</h3>
-        <div id="sfContainer"></div>
-      </div>
-      <div class="bracket-col final">
-        <h3>النهائي</h3>
-        <div id="finalContainer"></div>
-      </div>
+
     </div>
   </section>
 
@@ -245,55 +297,8 @@
 
 <footer class="container">
   <div class="brand"><span class="dot"></span> دورة المرحوم زحزاح أحمد</div>
-  <div>موقع تجريبي لعرض نتائج وإحصائيات كرة القدم</div>
+  <div>جميع الحقوق محفوظة © 2026</div>
 </footer>
-
-<script src="data.js"></script>
-<script>
-
-function koCardHtml(m, extraClass) {
-  const home = m.home || "";
-  const away = m.away || "";
-  const homeTxt = home ? home : "لم يتحدد بعد";
-  const awayTxt = away ? away : "لم يتحدد بعد";
-  const finished = m.status === "finished";
-  return `
-    <div class="ko-card ${extraClass || ""}">
-      <div class="ko-team">
-        <span class="name ${home ? "" : "tbd"}">${homeTxt}</span>
-        <span class="pts">${finished ? m.homeScore : "-"}</span>
-      </div>
-      <div class="ko-vs">×</div>
-      <div class="ko-team">
-        <span class="name ${away ? "" : "tbd"}">${awayTxt}</span>
-        <span class="pts">${finished ? m.awayScore : "-"}</span>
-      </div>
-      ${(m.date || m.time) ? `<div class="ko-meta"><span>${m.date || ""}</span><span>${m.time || ""}</span></div>` : ""}
-    </div>`;
-}
-
-/* الشريط المتحرك */
-const tickerTrack = document.getElementById("tickerTrack");
-const finishedKO = getKnockoutMatches().filter(m => m.status === "finished");
-const tickerItems = finishedKO.length
-  ? finishedKO.map(m => `<span>${m.stage}</span> ${m.home} ${m.homeScore} - ${m.awayScore} ${m.away}`)
-  : [`<span>الأدوار الإقصائية</span> تنطلق بعد نهاية دور المجموعات`];
-tickerTrack.innerHTML = tickerItems.concat(tickerItems).join("");
-
-document.getElementById("koMeta").textContent = finishedKO.length
-  ? `${finishedKO.length} مباريات منتهية`
-  : "لم تنطلق بعد";
-
-document.getElementById("qfContainer").innerHTML =
-  getKnockoutStage("ربع النهائي").map(m => koCardHtml(m)).join("");
-
-document.getElementById("sfContainer").innerHTML =
-  getKnockoutStage("نصف النهائي").map(m => koCardHtml(m)).join("");
-
-document.getElementById("finalContainer").innerHTML =
-  getKnockoutStage("النهائي").map(m => koCardHtml(m, "final")).join("");
-
-</script>
 
 </body>
 </html>
