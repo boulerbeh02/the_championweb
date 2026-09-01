@@ -11,6 +11,14 @@
   display: inline-flex;
   margin: 0 4px;
 }
+.table-wrap{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+table{ width:100%; border-collapse:collapse; font-size:14px; }
+thead th{ background:var(--surface-2); color:var(--yellow); font-family:'Almarai',sans-serif; font-weight:700; font-size:12.5px; text-align:right; padding:12px 14px; border-bottom:1px solid var(--border); }
+thead th.center, td.center{ text-align:center; }
+tbody td{ padding:11px 14px; border-bottom:1px solid rgba(255,255,255,0.04); color:var(--text); }
+tbody tr:last-child td{ border-bottom:none; }
+tbody tr:hover{ background:rgba(53,184,113,0.06); }
+tbody tr.top td{ box-shadow: inset 3px 0 0 var(--green-light); }
 
 /* ---------------- 2D Bracket Layout ---------------- */
 .bracket-wrap {
